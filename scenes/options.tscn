@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://05vsqrsatt5b"]
+
+[ext_resource type="Script" uid="uid://ctkmpmptk2r7x" path="res://scripts/options.gd" id="1_c2u1v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c2u1v"]
+bg_color = Color(0.7411765, 0.5254902, 0.6431373, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w5sac"]
+bg_color = Color(0.89425886, 0.44455394, 0.43530974, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="options" type="Node2D" unique_id=234526926]
+script = ExtResource("1_c2u1v")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1148366285]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 724.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="." unique_id=1112140]
+offset_left = 475.0
+offset_top = 462.0
+offset_right = 829.0
+offset_bottom = 602.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 52
+theme_override_styles/normal = SubResource("StyleBoxFlat_c2u1v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w5sac")
+text = "Back"
+
+[node name="Label" type="Label" parent="." unique_id=930745941]
+offset_left = 546.0
+offset_top = 116.0
+offset_right = 861.0
+offset_bottom = 263.0
+theme_override_font_sizes/font_size = 50
+text = "Options
+"
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=1025940732]
+offset_left = 436.0
+offset_top = 200.0
+offset_right = 653.0
+offset_bottom = 343.0
+scale = Vector2(2, 2)
+theme_override_font_sizes/font_size = 25
+button_pressed = true
+text = "  Enable Audio
+"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="toggled" from="CheckBox" to="." method="_on_check_box_toggled"]
